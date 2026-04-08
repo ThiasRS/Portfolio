@@ -1,7 +1,7 @@
-# Test Plan für Online Lebensmittel Shop Erweiterungen
+# Test Plan für Grocerymate Online Shop neue Funktionen
 ## 1. Analyse des Produkts
 **Zielsetzung:**
-Das Hauptziel des Testplans ist es, sicherzustellen, dass die Webseite stabil, benutzerfreundlich und funktional fehlerfrei ist, um ein reibungsloses Einkaufserlebnis zu garantieren.
+Das Hauptziel des Testplans ist es, sicherzustellen, dass die Webseite stabil, benutzerfreundlich und funktional fehlerfrei ist, um ein reibungsloses Einkaufserlebnis mit den neuen Funktionen zu garantieren.
 **Zielgruppe:**
 Nutzer die bequem von zuhause oder Unterwegs aus, Lebensmittel einkaufen wollen und diese direkt vor die Tür geliefert bekommen.
 ### Hardware- und Software-Spezifikationen:
@@ -13,25 +13,19 @@ Nutzer die bequem von zuhause oder Unterwegs aus, Lebensmittel einkaufen wollen 
     - Browser: Chrome, Firefox, Safari, Edge
     - Abhängigkeiten: Backend-Dienste, Drittanbieter-Werbedienste, Zahlungsschnittstellen
 **Funktionalitäten:**
- - Registrierung und Login
- - Altersverifizierung
- - Produktsuche und Filterung
- - Warenkorbmanagement
- - Checkout-Prozess
+- Bewertungssystem für Produkte
+- Altersverifikation für alkoholische Produkte
+- Änderungen bei den Versandkosten
 
 ## 2. Entwurf der Teststrategie
 **Testumfang:**
 - Im Umfang enthalten:
-  - Registrierung und Login
+  - Bewertungssystem
   - Eingabe des Alters
-  - Feld für die Produktsuche
-  - Filterung der Produkte
-  - Hinzufügen, Entfernen und Ändern des Warenkorbs
-  - Checkout-Flow
+  - Versandkostenänderung
 
 - Nicht im Umfag enthalten:
   - Last & Performance-Tests
-  - Echte Zahlungsabwicklung
   - Backend & Datenbank
  
 **Testarten:**
