@@ -9,9 +9,9 @@
 ## 1. Bewertungssystem für Produkte
 **Testentwurfsverfahren:** Anwendungsfalltest (Use Case Testing), Grenzwertanalyse (BVA), Fehlermessen (Error Guessing)
 
-## Testfälle:
+**Testfälle:**
 1. **Anwendungsfalltest:**
-  - **Testfall:** *Überprüfen ob die Bewertungsfunktion sichtbar ist bei gekauften Produkten und eingeloggtem User.
+  - **Testfall:** Überprüfen ob die Bewertungsfunktion sichtbar ist bei gekauften Produkten und eingeloggtem User.
     - **Eingabe:** Einloggen, Produkt kaufen, Navigation zum gekauftem Produkt.
     - **Erwartetes Ergebnis:** Bewertungssystem ist sichtbar.
 2. **Grenzwertanalyse:**
@@ -27,9 +27,9 @@
 ## 2. Altersverifikation für alkoholische Produkte
 **Testentwurfsverfahren:** Anwendungsfalltest (Use Case Testing), Grenzwertanalyse (BVA), Fehlermessen (Error Guessing)
 
-## Testfälle:
+**Testfälle:**
 1. **Anwendungsfalltest:**
-  - **Testfall:** *Überprüfen ob die Altersverifikation nach Login unter der Kategorie "Alkoholische Produkte" auftaucht.
+  - **Testfall:** Überprüfen ob die Altersverifikation nach Login unter der Kategorie "Alkoholische Produkte" auftaucht.
     - **Eingabe:** Einloggen, Navigation zur Produktkategorie "Alkoholische Produkte".
     - **Erwartetes Ergebnis:** Alterverifikation ist sichtbar.
 2. **Grenzwertanalyse:**
@@ -45,9 +45,9 @@
 ## 3. Änderung bei den Versandkosten
 **Testentwurfsverfahren:** Anwendungsfalltest (Use Case Testing), Grenzwertanalyse (BVA), Fehlermessen (Error Guessing)
 
-## Testfälle:
+**Testfälle:**
 1. **Anwendungsfalltest:**
-  - **Testfall:** *Prüfung der korrekten Anzeige des verbleibenden Differenzbetrags bis zum Gratis-Versand.
+  - **Testfall:** Prüfung der korrekten Anzeige des verbleibenden Differenzbetrags bis zum Gratis-Versand.
     - **Eingabe:** Ein Produkt im Wert von 12,00 € in den Warenkorb legen.
     - **Erwartetes Ergebnis:** Im Warenkorb erscheint ein Hinweis: „Noch 8,00 € bis zum kostenlosen Versand“, und die aktuellen Versandkosten werden voll berechnet.
 2. **Grenzwertanalyse:**
