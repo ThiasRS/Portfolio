@@ -5,9 +5,13 @@ Das Hauptziel des Testplans ist es, sicherzustellen, dass die Webseite stabil, b
 ### Zielgruppe
 Nutzer die bequem von zuhause oder Unterwegs aus, Lebensmittel einkaufen wollen und diese direkt vor die Tür geliefert bekommen.
 ### Hardware- und Software-Spezifikationen:
-#- Hardwareanforderungen:
-- Geräte: PCs, Laptops, Smartphones, Tablets
-- Mindestanforderungen: 4 GB RAM, 2 GHz Prozessor
+- **Hardwareanforderungen:**
+  - Geräte: PCs, Laptops, Smartphones, Tablets
+  - Mindestanforderungen: 4 GB RAM, 2 GHz Prozessor
+- **Softwareanforderungen:**
+    - Betriebssysteme: Windows, macOS, Android, iOS
+    - Browser: Chrome, Firefox, Safari, Edge
+    - Abhängigkeiten: Backend-Dienste, Drittanbieter-Werbedienste, Zahlungsschnittstellen
 
 ## 2. Entwurf der Teststrategie
 
