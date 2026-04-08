@@ -6,6 +6,7 @@
 
 **Füge, falls zutreffend, das verwendete Testentwurfsverfahren hinzu.**
 
+
 ## 1. Bewertungssystem für Produkte
 **Testentwurfsverfahren:** Anwendungsfalltest (Use Case Testing), Grenzwertanalyse (BVA), Fehlermessen (Error Guessing)
 
@@ -24,6 +25,7 @@
     - **Erwartetes Ergebnis:** Code wird als Text angezeigt.
 
 
+
 ## 2. Altersverifikation für alkoholische Produkte
 **Testentwurfsverfahren:** Anwendungsfalltest (Use Case Testing), Grenzwertanalyse (BVA), Fehlermessen (Error Guessing)
 
@@ -40,6 +42,7 @@
   - **Testfall:** *Das Datum bei der Alterverifikation im Format YYYY/MM/DD angeben.
     - **Eingabe:** Navigation zur Altersverifikation und 1993/08/24 eingeben.
     - **Erwartetes Ergebnis:** Datumsformat ungültig.
+
 
 
 ## 3. Änderung bei den Versandkosten
