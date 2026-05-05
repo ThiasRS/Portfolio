@@ -1,27 +1,33 @@
-Gehe zu [https://grocerymate.masterschool.com](https://grocerymate.masterschool.com/)
-
-1. Schreibe das XPath für das im untenstehenden Bild hervorgehobene Symbol/den hervorgehobenen Button.
+1. Schreibe das XPath für das im untenstehenden Bild hervorgehobene Symbol/den hervorgehobenen Button.  
+(//div[@class = 'headerIcon'])[1]
     
-    ![](attachment:38f4acec-5e04-4646-8f54-5edd021120da:image.png)
     
 
-1. Öffne nun https://grocerymate.masterschool.com/auth.
-    
-    ![](attachment:cc352327-dcdd-485b-af91-87626247bbd9:image.png)
-    
+2. Öffne nun https://grocerymate.masterschool.com/auth.
+Schreibe das **XPath** für **alle Eingabefelder**, die **"Sign In"**-Schaltfläche, den Link **"Create a new account"** und den Link **"Go to Home"**.  
+Email: //form[@class = 'form']//input[@type = 'email']  
+Password: //form[@class = 'form']//input[@type = 'password']  
+Sign-In-Button: //form[@class = 'form']//button[@type = 'submit']  
+Create-New-Account-Link: //form[@class = 'form']//a[@class = 'switch-link']  
+Go-To-Home-Link: //form[@class = 'form']//a[@class = 'home-link']  
 
-Schreibe das **XPath** für **alle Eingabefelder**, die **"Sign In"**-Schaltfläche, den Link **"Create a new account"** und den Link **"Go to Home"**.
 
-1. Klicke nun auf denselben Link wie in Teil 2 auf **"Create a new account"**, dann wirst du die folgende Benutzeroberfläche sehen:
+3. Klicke nun auf denselben Link wie in Teil 2 auf **"Create a new account"**.
+Schreibe das **XPath** für **alle Eingabefelder** und die **"Sign Up"**-Schaltfläche.  
+Full Name: //form[@class = 'form']//input[@type = 'text']  
+Email: //form[@class = 'form']//input[@type = 'email']  
+Password: //form[@class = 'form']//input[@type = 'password']  
+Sign-Up-Button: //form[@class = 'form']//button[@type = 'submit']  
+Already-Registered-Link: //form[@class = 'form']//a[@class = 'switch-link']  
+Go-To-Home-Link: //form[@class = 'form']//a[@class = 'home-link']    
 
-![](attachment:1e193326-679b-4739-96c8-36af2dc7c43e:image.png)
 
-Schreibe das **XPath** für **alle Eingabefelder** und die **"Sign Up"**-Schaltfläche.
+4. Gehe zu https://grocerymate.masterschool.com/store
+Schreibe das **XPath** der **"Confirm"**-Schaltfläche, die du im Modal sehen kannst.  
+//div[@class = 'modal-content']//button  
 
-1. Gehe zu https://grocerymate.masterschool.com/store, dann wirst du die folgende Benutzeroberfläche sehen:
 
-![](attachment:29c80beb-9478-4c6c-9ed0-104fe48162ad:image.png)
-
-Schreibe das **XPath** der **"Confirm"**-Schaltfläche, die du im Modal sehen kannst.
-
-1. Gehe zur **Shop-**Seite und schreibe das **XPath** für das **Mengeneingabefeld von Orangen**, die **"Add to cart"**Schaltfläche für Orangen und die **"Add to wish list"**Schaltfläche für Orangen.
+5. Gehe zur **Shop-**Seite und schreibe das **XPath** für das **Mengeneingabefeld von Orangen**, die **"Add to cart"**Schaltfläche für Orangen und die **"Add to wish list"**Schaltfläche für Orangen.  
+Mengeneingabe: //div[@class='card-header'][p/text()='Orange']/following-sibling::div//div[@class = 'col-3']  
+Add-to-cart-Button: //div[@class='card-header'][p/text()='Orange']/following-sibling::div//div[@class = 'col-7']  
+Add-to-wishlist-Button: //div[@class='card-header'][p/text()='Orange']/following-sibling::div//div[@class = 'col-1']  
