@@ -9,7 +9,7 @@ class HomePage(BasePage):
     ACCOUNT_BUTTON = (By.CLASS_NAME, "headerIcon")
 
     def go_to_login(self):
-        """Aktion: Klicke auf Login, um zur Login-Seite zu gelangen."""
+        """Aktion: Klicke auf Sign In, um zur Login-Seite zu gelangen."""
         self.click(self.LOGIN_LINK)
 
     def click_account_button(self):

@@ -1,7 +1,7 @@
 import pytest
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
-from selenium_pytest_project.utils.constants import BASE_URL, VALID_USER, VALID_PW
+from utils.constants import BASE_URL, VALID_USER, VALID_PW
 
 
 def test_successful_login(driver):
