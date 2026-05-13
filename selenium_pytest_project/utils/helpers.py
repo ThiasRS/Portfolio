@@ -23,6 +23,24 @@ def generate_user_data():
     }
 
 
+def generate_payment_and_address_data():
+    """Generiert zufällige Adress- und Zahlungsdaten"""
+
+    # Expiration Date generieren (MM/YY format, in der Zukunft)
+    month = f"{random.randint(1, 12):02d}"
+    year = random.randint(2026, 2030) # Jahre 2026 bis 2030
+
+    return {
+        "street": fake.street_address(),
+        "city": fake.city(),
+        "zip": fake.postcode(),
+        "card_number": fake.credit_card_number(card_type='visa'),  # oder 'mastercard'
+        "card_name": fake.name(),
+        "expiration": f"{month}/{year}",
+        "cvv": fake.credit_card_security_code()
+    }
+
+
 def register_and_login_new_user(driver):
     # Homepage aufrufen
     driver.get(BASE_URL)
