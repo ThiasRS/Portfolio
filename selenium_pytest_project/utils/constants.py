@@ -1,6 +1,10 @@
 # Basis-URLs
 BASE_URL = "https://grocerymate.masterschool.com/"
 
+# gültige Login-Daten
+VALID_USER = "test1234@web.de"
+VALID_PW = "test1234"
+
 # Bewertungssystem
 MAX_RATING_CHARS = 500
 INVALID_RATING_CHARS = 501
