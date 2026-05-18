@@ -15,6 +15,7 @@ class CheckoutPage(BasePage):
     PRODUCTS_TOTAL_PRICE = (By.XPATH, "(//h5[@class='fw-bold mb-0'])[4]")
     ACTUAL_SHIPPING_COSTS = (By.XPATH, "(//h5[@class='fw-bold mb-0'])[2]")
     PLUS_BUTTON = (By.XPATH, "//button[@class='plus']")
+    MINUS_BUTTON = (By.XPATH, "//button[@class='minus']")
     PRODUCT_PRICE = (By.XPATH, "//p[@class='checkout-price']")
     PAGE_BODY = (By.TAG_NAME, "body")
 
@@ -131,4 +132,46 @@ class CheckoutPage(BasePage):
             f"obwohl der Warenkorbwert ({price_over_limit} €) das Limit erreicht hat!"
         )
 
+        return True
+
+    def run_shipping_reactivation_check(self):
+        """
+        Bringt den Warenkorb über die Gratis-Schwelle, validiert den Gratis-Versand,
+        klickt dann Minus, bis der Warenkorb wieder darunter liegt, und prüft,
+        ob die Versandkosten reaktiviert wurden.
+        """
+        # 1. Preis eines einzelnen Produkts ermitteln
+        single_product_price = self.get_total_products_price()
+
+        # 2. SCHRITT: Hochklicken, bis wir ÜBER der Gratis-Schwelle sind
+        while self.get_total_products_price() < SHIPPING_FREE:
+            print("Erhöhe Warenkorb für Gratis-Versand...")
+            self.find(self.PLUS_BUTTON).click()
+            time.sleep(0.5)
+
+        # Überprüfen, ob der Versand jetzt wirklich erst einmal GRATIS ist
+        price_over_limit = self.get_total_products_price()
+        shipping_over_limit = self.get_shipping_costs()
+        print(f"Gratis-Schwelle erreicht: Warenkorb = {price_over_limit} € | Versand = {shipping_over_limit} €")
+
+        assert shipping_over_limit == 0.00, "Fehler im Test-Setup: Versand wurde nicht gratis geschaltet!"
+
+        # 3. SCHRITT: Wieder runterklicken, bis wir UNTER die Schwelle fallen (z.B. deine 15,00 €)
+        while self.get_total_products_price() >= SHIPPING_FREE:
+            print("Entferne Artikel über Minus-Button...")
+            self.find(self.MINUS_BUTTON).click()
+            time.sleep(0.5)
+
+        # --- DIE FEHLERMESSUNG (REAKTIVIERUNG) ---
+        price_under_limit = self.get_total_products_price()
+        shipping_under_limit = self.get_shipping_costs()
+        print(f"Warenkorb wieder reduziert: Warenkorb = {price_under_limit} €")
+
+        # Die entscheidende Prüfung: Sind die Versandkosten wieder da?
+        assert shipping_under_limit > 0.00, (
+            f"FEHLER (Bug gefunden!): Der Gratis-Status ist eingefroren! "
+            f"Warenkorb liegt bei {price_under_limit} €, aber Versandkosten sind immer noch {shipping_under_limit} €!"
+        )
+
+        print(f"Test erfolgreich: Versandkosten ({shipping_under_limit} €) wurden automatisch reaktiviert!")
         return True
