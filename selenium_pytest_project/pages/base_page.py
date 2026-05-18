@@ -6,13 +6,18 @@ class BasePage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
-    def find(self, locator):
+
+    def find(self, locator, timeout=10):
         """Findet ein Element und wartet, bis es sichtbar ist."""
-        return self.wait.until(EC.visibility_of_element_located(locator))
+        return WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+
 
     def click(self, locator):
         """Wartet auf ein Element und klickt darauf."""
         self.wait.until(EC.element_to_be_clickable(locator)).click()
+
 
     def type(self, locator, text):
         """Findet ein Feld und gibt Text ein."""

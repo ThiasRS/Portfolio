@@ -4,6 +4,7 @@ from pages.home_page import HomePage
 from pages.login_page import LoginPage
 from pages.registration_page import RegistrationPage
 from utils.constants import BASE_URL
+from datetime import datetime, timedelta
 
 fake = Faker('de_DE')
 
@@ -61,4 +62,28 @@ def register_and_login_new_user(driver):
     # Login mit dem registrierten neuen Nutzer
     login_page = LoginPage(driver)
     login_page.login(user["email"], user["password"])
+
+
+def generate_underage_birthday():
+    """
+    Generiert ein Geburtsdatum, das genau 1 Tag vor dem 18. Geburtstag liegt.
+    Format: DD-MM-YYYY
+    """
+    # 1. Das heutige Datum holen
+    today = datetime.now()
+
+    # 2. Berechnen, wann der 18. Geburtstag wäre (heute vor 18 Jahren)
+    # Da Schaltjahre die Berechnung mit reinen Tagen ungenau machen,
+    # ersetzen wir einfach das Geburtsjahr durch (aktuelles Jahr - 18)
+    try:
+        eighteen_years_ago = today.replace(year=today.year - 18)
+    except ValueError:
+        # Falls heute der 29. Februar ist und vor 18 Jahren kein Schaltjahr war
+        eighteen_years_ago = today.replace(year=today.year - 18, day=28)
+
+    # 3. Genau 1 Tag HINZUFÜGEN (damit die Person 1 Tag jünger/unter 18 ist)
+    birthday = eighteen_years_ago + timedelta(days=1)
+
+    # 4. Im Format DD-MM-YYYY zurückgeben
+    return birthday.strftime("%d-%m-%Y")
 
