@@ -9,6 +9,11 @@ class ShopPage(BasePage):
     BIRTHDAY_FIELD = (By.XPATH, "//input[@placeholder='DD-MM-YYYY']")
     ALCOHOL_SHOP_CATEGORY = (By.XPATH, "//a[text()='Alocohol']")
     UNDERAGE_NOTICE = (By.XPATH, "//h2[text()='Underage Notice']")
+    BIRTHDAY_FORMAT_INVALID = (By.XPATH, (
+        "//*[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'invalid') "
+        "or contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'format')]"
+    ))
+
 
     def add_first_product_to_cart(self):
         self.click(self.FIRST_PRODUCT_ADD_TO_CART)
@@ -29,6 +34,7 @@ class ShopPage(BasePage):
     def age_verification(self, birthday):
         self.type(self.BIRTHDAY_FIELD, birthday)
         self.click(self.CONFIRM_AGE_BUTTON)
+
 
 
     def navigate_to_alcohol_category(self):

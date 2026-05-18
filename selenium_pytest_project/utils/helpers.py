@@ -87,3 +87,14 @@ def generate_underage_birthday():
     # 4. Im Format DD-MM-YYYY zurückgeben
     return birthday.strftime("%d-%m-%Y")
 
+
+def generate_wrong_format_birthday():
+    """
+    Generiert ein valides Geburtsdatum, aber im falschen Format: YYYY/MM/DD
+    Beispiel: 1993/08/24
+    """
+    random_date = fake.date_of_birth(minimum_age=18, maximum_age=50)
+
+    # Formatieren als YYYY/MM/DD (wichtig sind die Slashes '/')
+    return random_date.strftime("%Y/%m/%d")
+
