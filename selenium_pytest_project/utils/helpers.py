@@ -1,5 +1,4 @@
 import random
-import string
 from faker import Faker
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
@@ -9,9 +8,9 @@ from utils.constants import BASE_URL
 fake = Faker('de_DE')
 
 
-def generate_text_of_length(length):
-    """Erzeugt einen zufälligen String einer bestimmten Länge."""
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+def generate_random_string(length):
+    """Generiert einen zufälligen Text mit einer exakten Zeichenlänge"""
+    return fake.lexify(text="?" * length)
 
 
 def generate_user_data():
